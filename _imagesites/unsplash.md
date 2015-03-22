@@ -1,7 +1,7 @@
 ---
 layout: entry
 sitename: Unsplash
-url: https://unsplash.com/
+siteurl: https://unsplash.com/
 sponsor: Crew
 sponsorurl: https://pickcrew.com
 license: CC0

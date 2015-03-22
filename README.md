@@ -13,9 +13,5 @@ The easiest way to update is to just click the edit button on a file on GitHub, 
 
 Just send a pull request with a new or updated file. Each site has it's own file in the [_imagesites](https://github.com/dpfavand/free-stock-images/tree/gh-pages/_imagesites) directory. See [unsplash.md](https://github.com/dpfavand/free-stock-images/blob/gh-pages/_imagesites/unsplash.md) for a commented example of how to format a site data file.
 
-### Add or update license information.
-
-Each site offers images under a license. The list of licenses is kept in [_data/licenses.yml](https://github.com/dpfavand/free-stock-images/blob/gh-pages/_data/licenses.yml). Site data files reference these license definitions. Feel free to submit PRs with updates to this file when needed by a site data file.
-
 # The future
 What other data do you think is important for this list? Open an issue and let's talk.

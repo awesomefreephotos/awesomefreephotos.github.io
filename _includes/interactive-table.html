@@ -21,8 +21,8 @@
 			<td><a href="{{ imagesite.siteurl }}"><span class="sitename">{{ imagesite.sitename }}</span></a></td>
          <td><a href="{{ imagesite.sponsorurl }}"><span class="sponsor">{{ imagesite.sponsor }}</span></a></td>
          <td class="quality">{{ imagesite.quality }}</td>
-         <td><a href="{{ site.data.licenses[imagesite.license].linkurl }}">
-            <span class="license">{{ site.data.licenses[imagesite.license].longname }}</span></a>
+         <td><a href="{{ imagesite.licenseurl }}">
+            <span class="license">{{ imagesite.license }}</span></a>
          </td>
 			<td class="tags">{{ imagesite.tags | array_to_sentence_string }}</td>
 		</tr>

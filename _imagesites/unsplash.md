@@ -11,8 +11,11 @@ sponsor: Crew
 # Link url for the sponsor
 sponsorurl: https://pickcrew.com
 
-# License code, corresponding to a license in /_data/licenses.yml
+# License that images are offered under.
 license: CC0
+
+# Link to the license page
+licenseurl: https://unsplash.com/license
 
 # A general quality indicator, on an integer scale of 1 to 3, 3 being the highest.
 # This could be contentious, and is admittedly vague. A better system would have 

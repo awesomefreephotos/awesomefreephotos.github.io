@@ -1,75 +1,7 @@
-Jekyll-DB
-=========
+# Free Stock Images Directory
 
-An easy way to use Jekyll and Github Pages as a "database".
+There are many lists of free stock photography sources. However, these lists tend to go out of date and are rarely updated. They offer links to many of the same resources, but no list is quite the same, so you keep searching, hoping you're not missing that one site. This list allows us to collaborate on building a master list of these sites. Please contribute new sites as you discover or create them.
 
-See it in action: [http://rypan.github.io/jekyll-db](http://rypan.github.io/jekyll-db)
+This dataset is licensed under the Creative Commons Attribution-ShareAlike license (CC BY-SA 4.0). By contributing to this dataset, you agree to license your contribution under the same license.
 
-### Use posts as entries
-
-```
----
-layout: entry
-company-name: AchieveMint
-city: San Francisco
-state: California
-employees: 100
-
-categories:
-- startup
-
-tags:
-- wellness
-- consumer
-- employer
----
-```
-
-### Output your fields in a table
-
-```
-<tbody class="list">
-{% for post in site.posts %}
-	<tr>
-		<td class="name">{{ post.company-name }}</td>
-		<td class="city">{{ post.city }}</td>
-		<td class="category">{{ post.categories }}</td>
-		<td class="tags">{{ post.tags | array_to_sentence_string }}</td>
-	</tr>
-{% endfor %}
-</tbody>
-```
-
-### Index the appropriate fields
-
-```
-<script type="text/javascript">
-
-var options = {
-  valueNames: ['name', 'city', 'category', 'tags']
-};
-
-var entryList = new List('entry-list', options);
-
-</script>
-```
-
-### Output your data as JSON
-
-```
----
-layout: none
----
-[{% for post in site.posts %}{
-	"company-name": "{{post.company-name}}",
-	"city": "{{post.city}}",
-	"state": "{{post.state}}",
-	"employees": "{{post.employees}}",
-	"tags": "{{ post.tags | array_to_sentence_string }}",
-	"categories": "{{post.categories}}"
-}{% if forloop.rindex0 > 0 %},{% endif %}{% endfor %}]
-```
-
-### Credits
-
-All the credits go to [Jekyll](http://jekyllrb.com/), [ListJS](http://listjs.com/) + [Bootstrap](http://getbootstrap.com/). I just pulled the pieces together.
+What other data do you think is important for this list? Open an issue and let's talk.

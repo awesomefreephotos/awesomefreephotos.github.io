@@ -16,7 +16,14 @@ layout: default
 
 
    <div class="row">
-      {{ site.github.contributors }}
+      <h3>Contributors</h3>
+      <p>This repository is managed by <a href="http://www.favand.net">Daniel Favand</a>. You can contribute new listings and updates on <a href="{{ site.github.repository_url }}">GitHub</a>.</p>
+      <p>These people helped make this list what it is today:</p>
+      {% for contributor in site.github.contributors %}
+      <a href="{{ contributor.html_url }}" title="{{ contributor.login }}">
+         <img style="height:100px;width:100px;" src="{{ contributor.avatar_url }}">
+      </a>
+      {% endfor %}
    </div>
 
    <div class="row">

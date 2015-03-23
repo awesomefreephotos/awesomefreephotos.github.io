@@ -1,8 +1,8 @@
 ---
 sitename: Magdeleine
 siteurl: http://magdeleine.co/
-sponsor: Magdeleine
-sponsorurl: https://twitter.com/MagdeleinePhoto
+sponsor: 
+sponsorurl:
 license: Various
 licenseurl: http://magdeleine.co/
 quality: 3

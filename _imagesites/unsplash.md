@@ -31,5 +31,7 @@ tags:
 - people
 - technology
 - urban
+
+# A description, in Markdown format, can follow the three dashes. (Not currently used.)
 ---
 

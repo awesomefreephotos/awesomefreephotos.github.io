@@ -9,6 +9,6 @@ quality: 3
 
 
 tags:
-- search, aggregator
+- aggregator
 ---
 

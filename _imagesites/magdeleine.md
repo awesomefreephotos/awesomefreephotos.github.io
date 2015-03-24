@@ -9,7 +9,7 @@ quality: 3
 
 
 tags:
-- aggregrator
+- aggregator
 - urban
 - nature
 - people

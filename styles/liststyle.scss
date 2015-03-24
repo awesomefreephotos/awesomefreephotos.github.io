@@ -1,0 +1,56 @@
+---
+# frontmatter
+---
+
+#Controls {
+   .filter{
+      display: inline-block;
+      // background-color: rgb(66, 139, 202);
+      margin: 2px;
+      // padding: 5px;
+      // color: white;
+   }
+
+   .active{
+      // background-color: black;
+   }
+}
+
+#Container {
+   .mix{
+      display: none;
+      padding: 5px;
+
+      //margin: 5px inherit;
+
+      .inner {
+         padding: 5px;
+         height: 100px;
+         overflow: hidden;
+         background-color: #aaaaaa;
+
+         &.qual1 {
+            background-color: #FFFFB5
+         }
+
+         &.qual2 {
+            background-color: #D1FFB3
+         }
+
+         &.qual3 {
+            background-color: #A5FF8A
+         }
+
+         h3 {
+            color: rgb(119, 119, 119);
+            margin: 0px;
+         }
+
+         .glyphicon {
+            // font-size: 18px;
+         }
+
+      }
+
+   }
+}

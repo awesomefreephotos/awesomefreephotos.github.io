@@ -2,6 +2,19 @@
 # frontmatter
 ---
 
+html {
+       overflow-y: scroll;
+}
+
+.navbar {
+   border-radius: 0px;
+}
+
+.container .row {
+   margin-left: 0px;
+   margin-right: 0px;
+}
+
 #Controls {
    .filter{
       display: inline-block;
@@ -9,45 +22,85 @@
       margin: 2px;
       // padding: 5px;
       // color: white;
+      background-color: #7F8C8D;
    }
 
    .active{
       // background-color: black;
+      background-color: #16A085;
    }
 }
 
 #Container {
+
+   .fail-message{
+  -webkit-transition: 150ms;
+  -moz-transition: 150ms;
+  transition: 150ms;
+      opacity: 0;
+      position: absolute;
+      z-index: -5;
+
+}
+
+.fail-message span{
+  font-size: 20px;
+  font-weight: 700;
+}
+
+&.fail .fail-message{
+  opacity: 1;
+
+}
+
    .mix{
       display: none;
       padding: 5px;
 
+
       //margin: 5px inherit;
+
+      &.qual1 .inner {
+            background-color: rgba(44, 62, 80, .70)
+         }
+
+         &.qual2 .inner{
+            background-color: rgba(44, 62, 80, .80)
+         }
+
+         &.qual3 .inner{
+            background-color: rgba(44, 62, 80, 1)
+         }
 
       .inner {
          padding: 5px;
          height: 100px;
          overflow: hidden;
-         background-color: #aaaaaa;
+         background-color: #FFF;
+         border-radius: 3px;
 
-         &.qual1 {
-            background-color: #FFFFB5
-         }
 
-         &.qual2 {
-            background-color: #D1FFB3
-         }
 
-         &.qual3 {
-            background-color: #A5FF8A
-         }
+
 
          h3 {
-            color: rgb(119, 119, 119);
+
             margin: 0px;
+            font-size: 24px;
+
+            a {
+               color: #ECF0F1;
+
+               &:hover {
+                  color: #BDC3C7;
+                  text-decoration: none;
+               }
+            }
+
          }
 
-         .glyphicon {
-            // font-size: 18px;
+         .label {
+            margin-right:5px;
          }
 
       }

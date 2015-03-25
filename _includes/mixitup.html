@@ -1,0 +1,114 @@
+
+
+{% assign licenses = "|" | split: "|" %}
+{% assign tags = "|" | split: "|" %}
+
+{% for imagesite in site.imagesites %}
+
+   {% if licenses contains imagesite.license %}
+   {% else %}
+      {% assign licenses = licenses | push: imagesite.license %}
+   {% endif %}
+
+
+   {% for tag in imagesite.tags %}
+      {% if tags contains tag %}
+      {% else %}
+         {% assign tags = tags | push: tag %}
+      {% endif %}
+   {% endfor %}
+
+{% endfor %}
+
+{% assign licenses = licenses | sort %}
+{% assign tags = tags | sort %}
+
+<div id="Controls">
+   <dl class="dl-horizontal">
+      <dt><i class="glyphicon glyphicon-tags" aria-hidden="true"></i> Tags</dt>
+      <dd>
+         {% for tag in tags %}
+         <button class="filter btn btn-default btn-xs" data-filter=".{{ tag }}">{{ tag }}</button>
+         {% endfor %}
+      </dd>
+      <dt><i class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></i> Licenses</dt>
+      <dd>
+         {% for license in licenses %}
+         <button class="filter btn btn-default btn-xs" data-filter=".{{ license | | replace: ' ', '_' }}">{{ license }}</button>
+         {% endfor %}
+      </dd>
+      <dt><i class="glyphicon glyphicon-stats" aria-hidden="true"></i> Quality</dt>
+      <dd>
+
+         <button class="filter btn btn-default btn-xs" data-filter=".qual1">Low</button>
+         <button class="filter btn btn-default btn-xs" data-filter=".qual2">Average</button>
+         <button class="filter btn btn-default btn-xs" data-filter=".qual3">High</button>
+
+      </dd>
+</div>
+
+<div id="Container">
+   {% for imagesite in site.imagesites %}
+   <div class="mix col-xs-6 col-sm-4 col-md-3
+               {{ imagesite.tags | join: ' ' }}
+               {{ imagesite.license | | replace: ' ', '_'}}
+               qual{{ imagesite.quality }}
+               "
+        data-quality="{{ imagesite.quality }}"
+        data-sitename="{{ imagesite.sitename }}">
+      <div class="inner">
+
+            <h3>
+               <a href="{{ imagesite.siteurl }}">
+            {{ imagesite.sitename }}
+               </a>
+            </h3>
+
+         <a class="label label-default" href="{{ imagesite.licenseurl }}">
+            <i class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></i> {{ imagesite.license }}
+         </a> <span class="label label-default"
+
+            data-toggle="tooltip"
+            data-placement="bottom"
+            data-trigger="click hover focus"
+            title="{{ imagesite.tags | array_to_sentence_string }}">
+         <i class="glyphicon glyphicon-tags" aria-hidden="true"></i> &nbsp; {{ imagesite.tags | size }}
+         </span>
+      </div>
+   </div>
+   {% endfor %}
+   <div class="fail-message"><span>No items were found matching the selected filters</span></div>
+</div>
+
+<script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
+
+<!-- MixItUp -->
+<script>
+
+   // On document ready:
+
+   $(function(){
+
+	  // Instantiate MixItUp:
+
+	  $('#Container').mixItUp({
+        controls: {
+		    toggleFilterButtons: true,
+		    toggleLogic: 'and'
+	     },
+
+	animation: {
+		duration: 400,
+		effects: 'fade translateZ(-360px) stagger(34ms) rotateY(104deg)',
+		easing: 'ease'
+	},
+        load: {
+		sort: 'sitename:asc'
+	}
+     });
+
+      // Initialize tooltips:
+      $('[data-toggle="tooltip"]').tooltip()
+   });
+
+</script>
